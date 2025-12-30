@@ -1,4 +1,11 @@
+import { receberValorNumerico, receberValorPositivo } from "./functions.js";
+
 // 1 - Escreva um algoritmo para ler 2 valores informados pelo usuário e se o segundo valor informado for igual ou menor que ZERO, deve ser lido um novo valor. Ou seja, para o segundo valor não pode ser aceito o valor zero, nem um valor negativo.  O seu programa deve imprimir o resultado da divisão do primeiro valor lido pelo segundo valor. 
+
+const valoresDivisao = {
+    valorQualquer: receberValorNumerico("Digite o primeiro número "),
+    divisor: receberValorPositivo("Digite o segundo número: \n\nOBS: Esse número deve ser maior que 1!", {textoErroOpcional: "O número digitado não é maior que 1, tente novamente..."})
+}
 
 var primeiroValor = Number(prompt("Digite um valor: "));
 
