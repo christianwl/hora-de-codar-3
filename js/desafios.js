@@ -3,38 +3,43 @@ import { receberValorNumerico, receberValorPositivo } from "./functions.js";
 // 1 - Escreva um algoritmo para ler 2 valores informados pelo usuário e se o segundo valor informado for igual ou menor que ZERO, deve ser lido um novo valor. Ou seja, para o segundo valor não pode ser aceito o valor zero, nem um valor negativo.  O seu programa deve imprimir o resultado da divisão do primeiro valor lido pelo segundo valor. 
 
 const valoresDivisao = {
-    valorQualquer: receberValorNumerico("Digite o primeiro número "),
+    dividendo: receberValorNumerico("Digite o primeiro número "),
     divisor: receberValorPositivo("Digite o segundo número: \n\nOBS: Esse número deve ser maior que 1!", {textoErroOpcional: "O número digitado não é maior que 1, tente novamente..."})
 }
 
+function retornarDivisaoSimples({dividendo, divisor}){
+    return dividendo / divisor;
+}
+
+var resultado = retornarDivisaoSimples(valoresDivisao);
+
+ApresentarNaTela(`O resultado da divisão de ${valoresDivisao.dividendo} pelo ${valoresDivisao.divisor} é ${resultado}`)
+
 var primeiroValor = Number(prompt("Digite um valor: "));
-
-do {
-    var segundoValor = Number(prompt("Digite outro valor: \n\nOBS: Esse valor não pode ser menor ou igual a Zero!!!"));
-    if (segundoValor <= 0) {
-        ApresentarErro('Número digitado incorreto, tente novamente');
-    }
-} while (segundoValor <= 0);
-
-var resultado = primeiroValor / segundoValor;
-ApresentarNaTela(`O resultado da divisão de ${primeiroValor} pelo ${segundoValor} é ${resultado}`)
 
 // 2 - Crie uma bomba relógio (usando somente código - para deixar claro!) cuja contagem regressiva vá de 30 a 0. Utilize "document.write" para escrever em tela e no final da repetição escreva "EXPLOSÃO". 
 
 var indice = 30;
 
-while (indice >= 0) {
-    ApresentarNoHtml(indice + " ");
-    indice--;
+function cronometrar(indiceMax, {regressivo = true, indiceInicial = 0} = {}){
+    let indiceMin = indiceInicial;
+    let cronometroCompleto = "";
+    do{
+        cronometroCompleto += (regressivo ? indiceMax : indiceMin) + " "; 
+        regressivo ? indiceMax-- : indiceMin++;      
+    } while (regressivo ? indiceMax >= indiceInicial : indiceMin <= indiceMax);
+
+    return cronometroCompleto;
 }
+
+ApresentarNoHtml(cronometrar(indice));
 ApresentarNoHtml("EXPLOSÃO!!!");
+
 
 // 3 - Escreva um algoritmo para imprimir os números de 1 (inclusive) a 10 (inclusive) em ordem decrescente.
 // Exemplo: 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
 
-for (var i = 10; i > 0; i--) {
-    ApresentarNoHtml(i + "");
-}
+ApresentarNoHtml(cronometrar(10, {indiceInicial: 1}));
 
 // 4 - Faça um algoritmo que calcule e escreva a média aritmética dos números inteiros entre 15 (inclusive) e 100 (inclusive).
 
