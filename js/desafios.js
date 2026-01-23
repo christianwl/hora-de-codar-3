@@ -4,7 +4,7 @@ import { receberValorNumerico, receberValorPositivo } from "./functions.js";
 
 const valoresDivisao = {
     dividendo: receberValorNumerico("Digite o primeiro número "),
-    divisor: receberValorPositivo("Digite o segundo número: \n\nOBS: Esse número deve ser maior que 1!", {textoErroOpcional: "O número digitado não é maior que 1, tente novamente..."})
+    divisor: receberValorPositivo("Digite o segundo número: \n\nOBS: Esse número deve ser maior que 0!", {textoErroOpcional: "O número digitado não é maior que 0, tente novamente..."})
 }
 
 function retornarDivisaoSimples({dividendo, divisor}){
@@ -14,6 +14,8 @@ function retornarDivisaoSimples({dividendo, divisor}){
 var resultado = retornarDivisaoSimples(valoresDivisao);
 
 ApresentarNaTela(`O resultado da divisão de ${valoresDivisao.dividendo} pelo ${valoresDivisao.divisor} é ${resultado}`)
+
+//----------------------------------------------------------------------------------------------------------------------
 
 // 2 - Crie uma bomba relógio (usando somente código - para deixar claro!) cuja contagem regressiva vá de 30 a 0. Utilize "document.write" para escrever em tela e no final da repetição escreva "EXPLOSÃO". 
 
@@ -25,7 +27,7 @@ function cronometrar(indiceMax, {regressivo = true, indiceInicial = 0} = {}){
     do{
         cronometroCompleto += (regressivo ? indiceMax : indiceMin) + " "; 
         regressivo ? indiceMax-- : indiceMin++;      
-    } while (regressivo ? indiceMax >= indiceInicial : indiceMin <= indiceMax);
+    } while (regressivo ? indiceMax >= indiceMin : indiceMin <= indiceMax);
 
     return cronometroCompleto;
 }
@@ -33,11 +35,14 @@ function cronometrar(indiceMax, {regressivo = true, indiceInicial = 0} = {}){
 ApresentarNoHtml(cronometrar(indice));
 ApresentarNoHtml("EXPLOSÃO!!!");
 
+//----------------------------------------------------------------------------------------------------------------------
 
 // 3 - Escreva um algoritmo para imprimir os números de 1 (inclusive) a 10 (inclusive) em ordem decrescente.
 // Exemplo: 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
 
 ApresentarNoHtml(cronometrar(10, {indiceInicial: 1}));
+
+//----------------------------------------------------------------------------------------------------------------------
 
 // 4 - Faça um algoritmo que calcule e escreva a média aritmética dos números inteiros entre 15 (inclusive) e 100 (inclusive).
 
