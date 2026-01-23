@@ -45,3 +45,11 @@ Para rodar o projeto:
 3. Abra a pasta do projeto no VS Code.
 4. Clique com o botão direito no arquivo `index.html` e selecione **"Open with Live Server"**.
 5. O projeto será servido em um ambiente seguro (`http://127.0.0.1:5500`).
+
+## Autor
+
+<div>
+  <a href="https://github.com/christianwl">
+    <img src="https://contrib.rocks/image?repo=christianwl/hora-de-codar-3" alt="Autor do Portfolio"/>
+  </a>
+</div>
