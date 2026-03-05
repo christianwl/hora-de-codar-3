@@ -7,7 +7,7 @@ Os exercícios foram desenvolvidos durante o ano de **2024** como parte do progr
 
 Em **2025**, o projeto passou por uma refatoração estratégica para implementar:
 * **Modularização (ES6 Modules):** Uso de `import` e `export` para organizar o código de forma profissional.
-* **Arquivo `functions.js`:** Centralização de funções utilitárias para apresentação de dados e tratamento de erros, evitando repetição de código
+* **Pasta `utils`:** Centralização de arquivos com funções utilitárias para apresentação de dados, tratamento de erros e execução de logicas, evitando repetição de código
 * **Validação de Dados:** Implementação de lógica para garantir que o programa receba apenas entradas válidas via `prompt`.
 * **Uso de `type="module"`:** Otimização do HTML para carregar apenas o script principal, deixando o navegador gerenciar as dependências.
 
@@ -17,8 +17,8 @@ Em **2025**, o projeto passou por uma refatoração estratégica para implementa
 
 ## 📂 Estrutura de Arquivos
 * `index.html`: Ponto de entrada que carrega o script principal.
-* `functions.js`: Biblioteca de funções auxiliares
-* `desafios.js`: Arquivo principal com a resolução dos 11 desafios.
+* `/utils`: Pasta com Biblioteca de funções auxiliares
+* `/modules/challenge-xx.js`: Arquivos individuais com a resolução dos 11 desafios.
 
 ## 📝 Lista de Desafios
 1.  **Divisão Segura:** Impede divisão por zero ou negativos.
